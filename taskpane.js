@@ -1,10 +1,10 @@
 Office.onReady(() => {
-  document.getElementById("readBodyBtn").addEventListener("click", readBody);
+  const btn = document.getElementById("readBodyBtn");
+  if (btn) btn.addEventListener("click", readBody);
 });
 
 function readBody() {
-  const item = Office.context.mailbox.item;
-
+  const item = Office.context.mailbox?.item;
   if (!item || item.itemType !== Office.MailboxEnums.ItemType.Message) {
     write("Please select an email first.");
     return;
@@ -12,7 +12,7 @@ function readBody() {
 
   item.body.getAsync(Office.CoercionType.Text, (result) => {
     if (result.status === Office.AsyncResultStatus.Succeeded) {
-      write(result.value);
+      write(result.value || "");
     } else {
       write("Error: " + result.error.message);
     }
@@ -20,5 +20,5 @@ function readBody() {
 }
 
 function write(text) {
-  document.getElementById("output").textContent = text;
+  document.getElementById("output").textContent = text || "";
 }

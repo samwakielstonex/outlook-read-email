@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
            xsi:type="MailApp">
 
-  <Id>12345678-1234-1234-1234-123456789abc</Id>
-  <Version>1.0.0.3</Version>
-  <ProviderName>Sam</ProviderName>
+  <Id>2f6d2f52-1d54-4f6b-9b6c-123456789abc</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Microsoft Test</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
 
-  <DisplayName DefaultValue="Read Selected Email"/>
-  <Description DefaultValue="Reads the body of the selected Outlook email."/>
+  <DisplayName DefaultValue="Microsoft Test Add-in"/>
+  <Description DefaultValue="Minimal test Outlook add-in."/>
 
   <IconUrl DefaultValue="https://appsforoffice.microsoft.com/lib/1/images/icon32.png"/>
   <HighResolutionIconUrl DefaultValue="https://appsforoffice.microsoft.com/lib/1/images/icon64.png"/>
   <SupportUrl DefaultValue="https://support.microsoft.com"/>
-
-  <AppDomains>
-    <AppDomain>https://samwakielstonex.github.io</AppDomain>
-  </AppDomains>
 
   <Hosts>
     <Host Name="Mailbox"/>
@@ -30,24 +25,19 @@
     </Sets>
   </Requirements>
 
-  <!-- REQUIRED: activation rule -->
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
   </Rule>
 
   <FormSettings>
     <Form xsi:type="ItemRead">
-      <DesktopSettings>
-        <SourceLocation DefaultValue="https://samwakielstonex.github.io/outlook-read-email/taskpane.html"/>
-      </DesktopSettings>
-
-      <!-- REQUIRED for Outlook on the web -->
       <WebSettings>
-        <SourceLocation DefaultValue="https://samwakielstonex.github.io/outlook-read-email/taskpane.html"/>
-        <RequestedHeight>300</RequestedHeight>
+        <SourceLocation DefaultValue="https://appsforoffice.microsoft.com/lib/1/hosted/OutlookAppRead.html"/>
+        <RequestedHeight>250</RequestedHeight>
       </WebSettings>
     </Form>
   </FormSettings>
 
-  <Permissions>ReadWriteItem</Permissions>
+  <Permissions>ReadItem</Permissions>
+
 </OfficeApp>
