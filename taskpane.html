@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8"/>
+  <title>Cash Pro Email Parser</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline' 'unsafe-eval' data:;"/>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 16px; }
+    button { padding: 8px 14px; margin-right: 8px; }
+    pre { background: #f6f8fa; padding: 12px; border-radius: 6px; white-space: pre-wrap; }
+  </style>
+  <!-- Office.js -->
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
 </head>
 <body>
-  <h3>Read Selected Email</h3>
-  <button id="readBodyBtn">Read Email Body</button>
-  <pre id="output" style="white-space: pre-wrap; margin-top: 20px;"></pre>
-
-  <script src="taskpane.js"></script>
+  <h2>Wire Alert Parser</h2>
+  <p>
+    <button id="readBodyBtn">Read Body</button>
+    <button id="exportCsvBtn" title="Export Fields to CSV">Export to CSV</button>
+  </p>
+  <pre id="output">Ready.</pre>
+  <script src="taskpane.js?v=dev"></script>
 </body>
 </html>
