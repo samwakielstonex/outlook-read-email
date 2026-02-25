@@ -85,7 +85,7 @@ function buildCsvRow(parsed, lookup, email) {
     /* CLIENT_CODE */                   clientCode,
     /* CLIENT_MASTER_ACCOUNT_NAME */    clientMaster,
     /* CLIENT_SUB_ACCOUNT */            clientSub,
-    /* SIDE */                          "CREDIT",
+    /* SIDE */                          "RECEIVE",
     /* AMOUNT */                        parsed.amount?.toFixed(2) ?? "",
     /* CURRENCY */                      parsed.currency || "",
     /* NOSTRO_BANK */                   nostroBank,
